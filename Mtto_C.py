@@ -54,8 +54,9 @@ conteo_area_nb = dtf_filtrado['area_nb'].value_counts()
 
 dtf_filtrado['tisu-sucu'] = dtf_filtrado['tisu'].astype(str) + ' - ' + dtf_filtrado['sucu_nb2'].astype(str)
 dtf_filtrado.set_index('maco_nb', inplace=True)
-conexion.close()
+conexion.close(dtf_filtrado)
 
+print()
 def combobox():
     wb = xw.Book.caller()
     source = wb.sheets["Source"]
